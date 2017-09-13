@@ -3,6 +3,8 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import './assets/css/ionicons.min.css';
+import './assets/css/bootstrap.css';
 
 Vue.config.productionTip = false;
 
