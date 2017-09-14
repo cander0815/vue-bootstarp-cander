@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <c-button type="success" icon="search" :loading="ajax" @click="aa">哈哈</c-button>
+    <c-button-group vertical>
+      <c-button type="success" icon="search" @click="aa"></c-button>
+      <c-button type="success" icon="search" @click="aa"></c-button>
+      <c-button type="success" icon="search" @click="aa"></c-button>
+    </c-button-group>
+
   </div>
 </template>
 
@@ -16,7 +21,8 @@
     },
     components: {
       cButton,
-      cIcon
+      cIcon,
+      cButtonGroup: cButton.Item
     },
     methods: {
       aa () {
