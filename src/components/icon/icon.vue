@@ -1,5 +1,5 @@
 <template>
-  <span :class="classes" @click="clicks($event)"></span>
+  <span :class="classes" :style="styles" @click="clicks($event)"></span>
 </template>
 
 <script>
@@ -10,6 +10,12 @@
       rotate: {
         type: Boolean,
         default: false
+      },
+      color: {
+        type: String
+      },
+      size: {
+        type: [String, Number]
       }
     },
     computed: {
@@ -20,6 +26,13 @@
           {
             'cander-iconRotate': this.rotate
           }
+        ];
+      },
+      styles () {
+        const _ = this;
+        return [
+          _.color ? {'color': _.color} : '',
+          _.size ? {'font-size': _.size + 'px'} : ''
         ];
       }
     },

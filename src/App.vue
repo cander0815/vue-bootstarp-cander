@@ -1,17 +1,19 @@
 <template>
   <div id="app">
     <c-button-group vertical>
-      <c-button type="success" icon="search" @click="aa"></c-button>
+      <c-button type="success" icon="search" @click="aa">cuicui</c-button>
       <c-button type="success" icon="search" @click="aa"></c-button>
       <c-button type="success" icon="search" @click="aa"></c-button>
     </c-button-group>
-
+    <!-- <c-icon type="star"></c-icon>   -->
+    <c-checkbox></c-checkbox>
   </div>
 </template>
 
 <script>
   import cButton from './components/button';
   import cIcon from './components/icon';
+  import cCheckbox from './components/checkbox';
   export default {
     name: 'app',
     data () {
@@ -22,7 +24,8 @@
     components: {
       cButton,
       cIcon,
-      cButtonGroup: cButton.Item
+      cButtonGroup: cButton.Item,
+      cCheckbox
     },
     methods: {
       aa () {
