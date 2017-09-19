@@ -11,3 +11,4 @@ export function haveValue (text, arr) {
   }
   return false;
 }
+

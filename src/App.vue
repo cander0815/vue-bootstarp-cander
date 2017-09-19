@@ -1,12 +1,11 @@
 <template>
   <div id="app">
-    <c-button-group vertical>
-      <c-button type="success" icon="search" @click="aa">cuicui</c-button>
-      <c-button type="success" icon="search" @click="aa"></c-button>
-      <c-button type="success" icon="search" @click="aa"></c-button>
-    </c-button-group>
-    <!-- <c-icon type="star"></c-icon>   -->
-    <c-checkbox></c-checkbox>
+    <c-checkbox-group v-model="cg">
+      <c-checkbox label="haha">haha</c-checkbox>
+      <c-checkbox label="lala">lala</c-checkbox>
+      <c-checkbox label="hehe">hehe</c-checkbox>
+    </c-checkbox-group>
+    <c-button type="info" @click="aa">显示</c-button>
   </div>
 </template>
 
@@ -14,22 +13,25 @@
   import cButton from './components/button';
   import cIcon from './components/icon';
   import cCheckbox from './components/checkbox';
+
   export default {
     name: 'app',
     data () {
       return {
-        ajax: false
+        ajax: false,
+        cg: []
       };
     },
     components: {
       cButton,
       cIcon,
       cButtonGroup: cButton.Item,
-      cCheckbox
+      cCheckbox,
+      cCheckboxGroup: cCheckbox.Item
     },
     methods: {
       aa () {
-        this.ajax = !this.ajax;
+        console.log(this.cg);
       }
     }
   };
