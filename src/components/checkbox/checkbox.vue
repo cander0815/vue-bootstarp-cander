@@ -4,9 +4,10 @@
     <span class="c-checkbox-iconbox" :class="{active:show}">
       <i class="ionicons ion-checkmark c-checkbox-icon" v-show="show"></i>
     </span>
-    <span class="c-checkbox-text">
+    <span class="c-checkbox-text" v-if="showSlot">
 			<slot></slot>
 		</span>
+    <span class="c-checkbox-text" v-else>{{label}}</span>
   </label>
 </template>
 
@@ -18,22 +19,31 @@
     mixins: [mixin],
     data () {
       return {
-        show: false
+        show: false,
+        showSlot: true
       };
     },
     props: {
       value: {
-        type: Boolean,
+        type: [String, Number, Boolean],
         default: false
       },
-      label: String
+      label: {
+        type: [String, Number, Boolean],
+        default: undefined
+      }
     },
     methods: {
       check () {
         this.show = !this.show;
         this.$emit('input', this.show);
-        this.parentEvents('cCheckBoxGroup', 'c-checkbox-group', this.label, this.show);
+        (this.label !== undefined) && this.parentEvents('cCheckBoxGroup', 'c-checkbox-group', this.label, this.show);
       }
+    },
+    mounted () {
+      this.show = this.value;
+      const childs = this.$slots;
+      this.showSlot = !!(childs.default);
     }
   };
 </script>

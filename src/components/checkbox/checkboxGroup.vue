@@ -4,6 +4,7 @@
   </div>
 </template>
 <script>
+  import { findChild } from '../../assets/utils/utils';
   export default {
     name: 'cCheckBoxGroup',
     props: {
@@ -27,6 +28,21 @@
         }
         this.$emit('input', arr);
       });
+      this.upvalue();
+    },
+    methods: {
+      upvalue () {
+        const value = this.checkboxs = this.value;
+        let child = findChild(this, 'cCheckbox');
+        child.length && child.forEach(v => {
+          v.show = (value.includes(v.label));
+        });
+      }
+    },
+    watch: {
+      value (to, from) {
+        this.upvalue();
+      }
     }
   };
 </script>

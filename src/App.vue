@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <c-checkbox-group v-model="cg">
-      <c-checkbox label="haha">haha</c-checkbox>
-      <c-checkbox label="lala">lala</c-checkbox>
-      <c-checkbox label="hehe">hehe</c-checkbox>
+      <c-checkbox label="haha">banner</c-checkbox>
+      <c-checkbox label="lala">wancui</c-checkbox>
+      <c-checkbox :label="false"></c-checkbox>
     </c-checkbox-group>
+    <c-checkbox v-model="hehe">{{hehe}}</c-checkbox>
     <c-button type="info" @click="aa">显示</c-button>
   </div>
 </template>
@@ -19,7 +20,8 @@
     data () {
       return {
         ajax: false,
-        cg: []
+        cg: ['lala'],
+        hehe: true
       };
     },
     components: {
