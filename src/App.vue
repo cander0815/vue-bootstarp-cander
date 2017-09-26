@@ -1,12 +1,7 @@
 <template>
   <div id="app">
-    <c-checkbox-group v-model="cg">
-      <c-checkbox label="haha">banner</c-checkbox>
-      <c-checkbox label="lala">wancui</c-checkbox>
-      <c-checkbox :label="false"></c-checkbox>
-    </c-checkbox-group>
-    <c-checkbox v-model="hehe">{{hehe}}</c-checkbox>
-    <c-button type="info" @click="aa">显示</c-button>
+   <c-radio>haha</c-radio>
+   <c-radio>lala</c-radio>
   </div>
 </template>
 
@@ -14,7 +9,7 @@
   import cButton from './components/button';
   import cIcon from './components/icon';
   import cCheckbox from './components/checkbox';
-
+  import cRadio from './components/radio';
   export default {
     name: 'app',
     data () {
@@ -29,7 +24,8 @@
       cIcon,
       cButtonGroup: cButton.Item,
       cCheckbox,
-      cCheckboxGroup: cCheckbox.Item
+      cCheckboxGroup: cCheckbox.Item,
+      cRadio
     },
     methods: {
       aa () {
