@@ -32,10 +32,17 @@
 
     <section class="group-sec">
       <p class="group-title">输入框</p>
+      <c-input></c-input>
+      <c-input size="l"></c-input>
+      <c-input size="s"></c-input>
+      <c-input :placeholder="inputPlace"></c-input>
+      <c-input disabled></c-input>
+      <c-input placeholder="请填写姓名">姓名：</c-input>
     </section>
   
     <section class="group-sec">
       <p class="group-title">输入框计数器</p>
+      <c-input-num></c-input-num>
     </section>
 
     <section class="group-sec">
@@ -54,6 +61,8 @@
   import cButton from './components/button';
   import cIcon from './components/icon';
   import cCheckbox from './components/checkbox';
+  import cInput from './components/input';
+  import cInputNum from './components/inputNum';
 
   export default {
     name: 'app',
@@ -61,7 +70,8 @@
       return {
         ajax: false,
         cg: ['lala'],
-        hehe: true
+        hehe: true,
+        inputPlace: '自己写的提示'
       };
     },
     components: {
@@ -69,7 +79,9 @@
       cIcon,
       cButtonGroup: cButton.Item,
       cCheckbox,
-      cCheckboxGroup: cCheckbox.Item
+      cCheckboxGroup: cCheckbox.Item,
+      cInput,
+      cInputNum
     },
     methods: {
       aa () {
@@ -84,7 +96,7 @@
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
+    /*text-align: center;*/
     color: #2c3e50;
     padding-top: 20px;
   }
